@@ -1,16 +1,17 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 const ImageMinimizerWebpackPlugin = require('image-minimizer-webpack-plugin');
 
 module.exports = (root) => ({
   devtool: 'source-map', 
-  entry: path.join(root, 'src', 'index.ts'),
+  entry: path.join(root, 'src', 'lib', 'index.ts'),
+  experiments: {
+    outputModule: true,
+  },
   mode: 'production',
   module: {
     rules: [
-      { test: /\.html$/, loader: 'html-loader' },
       { test: /\.css$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'] },
       { test: /\.ts$/, use: ['ts-loader'], exclude: /node_modules/ },
       { test: /\.(gif|jpg|jpeg|png|svg|webp)$/, type: 'asset' },
@@ -27,33 +28,17 @@ module.exports = (root) => ({
         },
       }),
     ],
-    moduleIds: 'deterministic',
-    runtimeChunk: 'single',
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
-          chunks: 'all'
-        }
-      },
-      chunks: 'all'
-    }
-  },
-  plugins: [
-    new HtmlWebpackPlugin({ template: path.join(root, 'src', 'index.html') }),
-    new HtmlWebpackPlugin({
-      filename: path.join('es', 'index.html'),
-      template: path.join(root, 'src', 'es', 'index.html'),
-    }),
-    new MiniCssExtractPlugin(),
-  ],
-  resolve: {
-    extensions: ['.js', '.ts'],
   },
   output: {
-    filename: '[name].js',
-    path: path.resolve(root, 'dist'),
     clean: true,
+    filename: '[name].js',
+    globalObject: 'this',
+    library: {
+      type: 'module'
+    },
+    path: path.resolve(root, 'dist'),
+  },
+  resolve: {
+    extensions: ['.js', '.ts'],
   },
 });
