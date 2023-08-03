@@ -1,5 +1,6 @@
 {
   "author": "Cajal Fernando Lautaro",
+  "bin": "./bin/cli/js",
   "bugs": "https://github.com/lufffer/repository-name/issues",
   "description": "",
   "devDependencies": {
@@ -30,7 +31,7 @@
   "keywords": [],
   "license": "MIT",
   "main": "dist/entry-file-name.js",
-  "name": "package-name",
+  "name": "@webpack/webpack-tlib",
   "repository": {
     "type": "git",
     "url": "https://github.com/lufffer/repository-name.git"
