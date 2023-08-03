@@ -42,5 +42,5 @@
     "build": "webpack --mode production",
     "dev": "webpack serve --mode development"
   },
-  "version": "1.0.2"
+  "version": "1.0.3"
 }
