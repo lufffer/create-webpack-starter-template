@@ -1,6 +1,8 @@
 {
   "author": "Cajal Fernando Lautaro",
-  "bin": "./bin/cli/js",
+  "bin": {
+    "webpack-tlib": "bin/cli.cjs"
+  },
   "bugs": "https://github.com/lufffer/repository-name/issues",
   "description": "",
   "devDependencies": {
@@ -31,14 +33,14 @@
   "keywords": [],
   "license": "MIT",
   "main": "dist/entry-file-name.js",
-  "name": "@webpack/webpack-tlib",
+  "name": "webpack-tlib",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lufffer/repository-name.git"
+    "url": "git+https://github.com/lufffer/repository-name.git"
   },
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack serve --mode development"
   },
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
