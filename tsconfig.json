@@ -4,7 +4,6 @@
     "allowSyntheticDefaultImports": true,
     "declaration": true,
     "declarationMap": true,
-    "emitDeclarationOnly": true,
     "esModuleInterop": true,
     "module": "es6",
     "moduleResolution": "node",
