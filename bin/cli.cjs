@@ -27,8 +27,7 @@ console.log('Installing dependencies...');
 if (!run(`cd ${process.argv[2]} && pnpm install`)) process.exit(-1);
 
 run('rm -rf ../bin');
-run(`cd ${process.argv[2]}`);
-if (!run('git remote remove origin')) {
+if (!run(`cd ${process.argv[2]} && git remote remove origin`)) {
   console.log('Warning: Do you have git installed? origin was not removed.\nRemove it with: git remote remove origin');
 };
 
