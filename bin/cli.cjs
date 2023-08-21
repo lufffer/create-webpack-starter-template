@@ -32,4 +32,4 @@ if (!run(`cd ${process.argv[2]} && git remote remove origin`)) {
 };
 
 console.log('Congratulations! You are ready. Follow the following commands to start');
-console.log('pnpm run dev');
+console.log(`cd ${process.argv[2]} && pnpm run dev`);
