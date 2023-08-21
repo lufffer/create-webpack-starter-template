@@ -1,4 +1,5 @@
 {
+  "author": "Cajal Fernando Lautaro",
   "bin": {
     "webpack-starter-template": "bin/cli.cjs"
   },

@@ -13,7 +13,15 @@ const run = cmd => {
 };
 
 console.log('Cloning the repository...');
-if (!run(`git clone --depth 1 https://github.com/lufffer/webpack ${process.argv[2]}`)) process.exit(-1);
+if (process.argv[3] === 'lib') {
+  if (!run(`git clone --depth 1 -b webpack-tlib https://github.com/lufffer/webpack ${process.argv[2]}`)) {
+    process.exit(-1);
+  }
+} else if (process.argv[3] === undefined) {
+  if (!run(`git clone --depth 1 https://github.com/lufffer/webpack ${process.argv[2]}`)) {
+    process.exit(-1);
+  }
+}
 
 console.log('Installing dependencies...');
 if (!run(`cd ${process.argv[2]} && pnpm install`)) process.exit(-1);
