@@ -1,7 +1,6 @@
 {
-  "author": "Cajal Fernando Lautaro",
   "bin": {
-    "webpack-starter-template": "bin/cli.cjs"
+    "create-webpack-starter-template": "bin/cli.cjs"
   },
   "devDependencies": {
     "@types/dotenv-webpack": "^7.0.4",
@@ -28,7 +27,7 @@
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
   },
-  "name": "webpack-starter-template",
+  "name": "create-webpack-starter-template",
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack serve --mode development",
